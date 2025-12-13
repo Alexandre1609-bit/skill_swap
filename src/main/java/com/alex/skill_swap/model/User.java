@@ -1,6 +1,9 @@
 package com.alex.skill_swap.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -13,6 +16,9 @@ public class User {
      @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Integer id;
      private Integer balance;
+     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL) //Cascade : Si on supprime un User toutes ses offres
+     @JsonIgnore                                                            //Seront aussi supprimées.
+     private List<Offer> offers = new ArrayList<>();
 
      public User() {}
 
@@ -63,5 +69,13 @@ public class User {
 
      public void setId(Integer id) {
           this.id = id;
+     }
+
+     public List<Offer> getOffers() {
+          return offers;
+     }
+
+     public void setOffers(List<Offer> offers) {
+          this.offers = offers;
      }
 }
