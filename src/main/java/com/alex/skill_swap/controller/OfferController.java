@@ -2,13 +2,11 @@ package com.alex.skill_swap.controller;
 
 import com.alex.skill_swap.model.Offer;
 import com.alex.skill_swap.service.OfferService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 
 
 @RestController
@@ -24,6 +22,12 @@ public class OfferController {
     public ResponseEntity<Offer> create(@RequestBody Offer offer) {
         Offer createOffer = offerService.createOffer(offer);
         return ResponseEntity.status(HttpStatus.CREATED).body(createOffer);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Offer>> getAll() {
+        List<Offer> offers = offerService.getAllOffers();
+        return ResponseEntity.ok(offers);
     }
 
 }
