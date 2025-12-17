@@ -1,6 +1,4 @@
-# 🔄 Skill Swap
-
-![Java CI with Maven](https://github.com/Alexandre1609-bit/skill-swap/actions/workflows/maven.yml/badge.svg)
+# Skill Swap
 
 **Skill Swap** est une plateforme backend d'échange de compétences. Elle permet aux utilisateurs de proposer des services (cours, mentorat) et de les échanger contre des crédits virtuels dans une logique de "Time Banking".
 
