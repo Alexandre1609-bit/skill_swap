@@ -38,7 +38,7 @@ L'application sera accessible sur : http://localhost:8080
 
 1. Cloner le projet:
 ```bash
-git clone [https://github.com/](https://github.com/)[TON_PSEUDO]/skill-swap.git
+git clone https://github.com/Alexandre1609-bit/skill-swap.git
 ```
 
 2. Compiler et Tester:
